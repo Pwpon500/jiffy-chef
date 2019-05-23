@@ -1,0 +1,47 @@
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+<% @interface_hash.each do |interface, props| -%>
+<% unless props['onboot'] == false -%>
+auto <%= interface %>
+<% end %>
+iface <%= interface %> inet <%= props['proto'] %>
+<% if props['addr'] -%>
+    address <%= props['addr'] %>
+<% end %>
+<% if props['netmask'] -%>
+    netmask <%= props['netmask'] %>
+<% end %>
+<% if props['broadcast'] -%>
+    broadcast <%= props['broadcast'] %>
+<% end %>
+<% if props['gateway'] -%>
+    gateway <%= props['gateway'] %>
+<% end %>
+<% if props['mtu'] -%>
+    mtu <%= props['mtu'] %>
+<% end %>
+<% if props['pre-up'] -%>
+    pre-up <%= props['pre-up'] %>
+<% end %>
+<% if props['up'] -%>
+    up <%= props['up'] %>
+<% end %>
+<% if props['post-up'] -%>
+    post-up <%= props['post-up'] %>
+<% end %>
+<% if props['pre-down'] -%>
+    pre-down <%= props['pre-down'] %>
+<% end %>
+<% if props['down'] -%>
+    down <%= props['down'] %>
+<% end %>
+<% if props['post-down'] -%>
+    post-down <%= props['post-down'] %>
+<% end %>
+
+<% end %>

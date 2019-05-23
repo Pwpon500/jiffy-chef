@@ -1,0 +1,17 @@
+Metrics/LineLength:
+    Enabled: false
+
+Layout/IndentationWidth:
+    Enabled: false
+
+Layout/IndentHash:
+    Enabled: false
+
+Style/NumericLiterals:
+    Enabled: false
+
+Layout/FirstParameterIndentation:
+    Enabled: false
+
+Metrics/BlockLength:
+    Enabled: false
